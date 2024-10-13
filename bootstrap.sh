@@ -2,24 +2,32 @@
 # Change these if you want
 GIT_USER="Bryan Martinez"
 GIT_EMAIL="27615559+brymartinez@users.noreply.github.com"
-# Make sure wget, curl, git, and zsh are installed
 
+# Make sure wget, curl, git, zsh, and stow are installed
+which wget curl git zsh stow
+if [ $? -ne 0 ]; then
+  exit 1
+fi
+
+# Install Meslo NF
 wget -P ~/.local/share/fonts https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf \
 && cd ~/.local/share/fonts \
 && fc-cache -fv
+
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Install p10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-# Install vim
+# Install neovim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 sudo rm -rf /opt/nvim
 sudo tar -C /opt -xzf nvim-linux64.tar.gz
 rm nvim-linux64.tar.gz
 
 # tmux
+apt install tmux
 
 # Git commands
 git config --global init.defaultBranch main

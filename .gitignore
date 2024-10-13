@@ -1,5 +1,0 @@
-*
-!.gitignore
-!.config/nvim
-!.zshrc
-!bootstrap.sh

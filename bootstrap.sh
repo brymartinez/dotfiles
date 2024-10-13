@@ -3,16 +3,18 @@
 GIT_USER="Bryan Martinez"
 GIT_EMAIL="27615559+brymartinez@users.noreply.github.com"
 
+# Install p10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
 # Install ohmyzsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-# clone
+#sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# Install fonts
 git clone https://github.com/powerline/fonts.git --depth=1
-# install
 cd fonts
 ./install.sh
-# clean-up a bit
 cd ..
 rm -rf fonts
+
 
 # Install vim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz

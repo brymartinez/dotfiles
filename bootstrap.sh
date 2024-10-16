@@ -36,8 +36,8 @@ apt install -y tmux
 # Git commands
 echo "Setting git commands..."
 git config --global init.defaultBranch main
-git config --global user.email "${GIT_USER}"
-git config --global user.name "${GIT_EMAIL}"
+git config --global user.email "${GIT_EMAIL}"
+git config --global user.name "${GIT_USER}"
 
 # Software deps (nvm, go, python)
 echo "Installing software dependencies..."
